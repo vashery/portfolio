@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav id="myNavbar" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Luke McCray</a>
+      <div class="justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#section1">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section2">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section3">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+      <h1>About Me</h1>
+      <div class="row">
+        <img id="headshot" class="col-3" src="assets/images/headshot.jpg" alt="Headshot" height="300" width="200">
+        <p class="col-9">
+          <span id="rawtext">Hello! My name is Luke McCray. I am a technology enthusiast and all around computer guy. I
+            have worked in the technology field for around 10 years and love to learn new things and expand my
+            knowledge. I
+            enjoy spending time with my family, pets, and playing retro style video games. I consider myself a very
+            open person and enjoy being around all kinds of people. I like to give others the benefit of the doubt and
+            am
+            very optimistic. </span></p>
+      </div>
+    </div>
+    <div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+      <div id="contentcenter">
+        <h1 class="contentheader">Projects</h1>
+        <div class="row">
+          <a href="https://vashery.github.io/TriviaGame/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/headphones.png"
+              alt="wordguess"><span class="tiletext">Music Trivia Game</span></a>
+          <a href="https://vashery.github.io/Word-Guess-Game/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/cyan.png"
+              alt="wordguess"><span class="tiletext">Word Guess!</span></a>
+          <a href="https://vashery.github.io/unit-4-game/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/aang.png"
+              alt="rpg"><span class="tiletext">RPG</span></a>
+        </div>
+        <div class="row">
+            <a href="https://vashery.github.io/TriviaGame/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/headphones.png"
+                alt="wordguess"><span class="tiletext">Music Trivia Game</span></a>
+            <a href="https://vashery.github.io/Word-Guess-Game/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/cyan.png"
+                alt="wordguess"><span class="tiletext">Word Guess!</span></a>
+            <a href="https://vashery.github.io/unit-4-game/" class="col-md vertmarg" id="addbluebackground"><img src="assets/images/aang.png"
+                alt="rpg"><span class="tiletext">RPG</span></a>
+          </div>
+      </div>
+    </div>
+    <div id="section3" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+        <div id="contentcenter">
+            <h1 class="contentheader">Contact</h1>
+            <form class="name">
+                    <div class="form-group">
+                            <label for="inputdefault">Name</label>
+                            <input class="form-control" id="inputdefault" type="text">
+                          </div>
+                          <div class="form-group">
+                                <label for="inputdefault">Email</label>
+                                <input class="form-control" id="inputdefault" type="text">
+                              </div>
+                    <div class="form-group">
+                            <label for="comment">Message</label>
+                            <textarea class="form-control" rows="10" id="comment"></textarea>
+                    </div>
+                    <button type="button" class="btn buttoncolor">submit</button>
+             </form>
+             <br>
+             <a href="https://www.linkedin.com/in/luke-mccray-0a299ab3">Connect with me on linkedin!</a>
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+  <script>
+    $(document).ready(function () {
+      // Add scrollspy to <body>
+      $('body').scrollspy({ target: ".navbar", offset: 50 });
+
+      // Add smooth scrolling on all links inside the navbar
+      $("#myNavbar a").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        }  // End if
+      });
+    });
+  </script>
+</body>
+
+</html>
